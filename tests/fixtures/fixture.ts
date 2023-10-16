@@ -10,6 +10,7 @@ const test = base.extend<Fixture>({
       const todoPage = new TodoPage(page);
       await todoPage.goto();
       await use(todoPage);
+      await page.close();
     },
 });
 

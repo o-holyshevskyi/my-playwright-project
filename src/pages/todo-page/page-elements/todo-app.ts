@@ -1,8 +1,10 @@
 import { Locator, Page } from "@playwright/test";
+import Control from "../../../control/control";
 
 export class TodoApp {
     private readonly newTodoItem: Locator = this.page.locator('header > input');
     private readonly leftTodoItems: Locator = this.page.locator('//*[@data-testid="todo-count"]/strong');
+    public readonly newTodoInput: Control = new Control('header > input', this.page);
 
     constructor (private readonly page: Page) {}
 
